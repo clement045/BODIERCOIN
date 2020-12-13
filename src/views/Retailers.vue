@@ -1,6 +1,14 @@
 <template>
 <div class="container">
     <div class="row">
+        <div class="ret-list col text-center">
+            <br><br>
+            <h2><b>Voici la liste de nos partenaires : </b></h2>
+            <br><br>
+        </div>
+    </div>
+
+    <div class="row">
 
         <br><br>
 
@@ -55,3 +63,9 @@ export default {
 }
 
 </script>
+
+<style> 
+.ret-list {
+    color: #FFA008;
+}
+</style>
