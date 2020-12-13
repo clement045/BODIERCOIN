@@ -27,6 +27,7 @@
               <l-popup class="popup">
                 <div @click="innerClick(retailer)">
                   {{retailer.name}}
+                  {{ retailer.storeName }}
                   <br>
                   {{ retailer.storeType }}
                   <p v-show="showParagraph">
@@ -120,7 +121,7 @@ import { LMap, LTileLayer, LMarker, LPopup } from "vue2-leaflet";
 }
 .popup {
   size:150;
-  color:red;
+  color:black;
   /*
   height: 150px;
   width: 200px;
