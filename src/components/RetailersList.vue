@@ -2,7 +2,7 @@
 
     <div class="retailers-list">
 
-        <div class="" style="">
+        <div class="">
             <ul class="list-group list-group-flush" v-for="(retailer,index) in retailers" :key="retailer.id" >
                 <div class="retailer-total"
                 @mouseover="mouseOver(index)"
