@@ -2,15 +2,32 @@
 
     <div class="retailers-list">
 
-        <div class="cards" style="width: 18rem">
+        <div class="" style="">
             <ul class="list-group list-group-flush" v-for="(retailer,index) in retailers" :key="retailer.id" >
-                <li 
-                class="list-group-item" 
+                <div class="retailer-total"
                 @mouseover="mouseOver(index)"
                 @mouseleave="mouseLeave(index)"
-                > 
-                    {{ retailer.storeName }}
-                </li>
+                >
+                    <li 
+                    class="list-group-item" 
+                    
+                    > 
+                    <b> {{ retailer.storeName }} </b> : {{ retailer.storeType }}
+                    </li>
+                    <div class="retailer-detail">
+                        <div class="card">
+                            <img class="card-img-top" :src="retailer.pictures" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ retailer.storeName }}</h5>
+                                <p class="card-text">{{ retailer.storeDescription }}</p>
+                                <router-link :to="{name: 'Retailer', params: {id: retailer.id, retailer: retailer}}">
+                                    <a href="#" class="btn btn-primary">Plus d'informations</a>
+                                </router-link>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                
             </ul>
         </div>
     </div>
@@ -28,10 +45,12 @@ export default {
     },
     methods: {
         mouseOver(index) {
-            this.$emit('mouse-over-retailer', index);
+            var t = document.querySelectorAll(".retailer-detail")
+            t[index].style.display = "block"
         },
         mouseLeave(index) {
-            this.$emit('mouse-leave-retailer', index);
+            var ta = document.querySelectorAll(".retailer-detail")
+            ta[index].style.display = "none"
         },
     }
 }
@@ -46,7 +65,11 @@ export default {
 }
 
 
-ul li:hover {
+ul :hover {
     background-color: darkgrey !important;
+}
+
+.retailer-detail {
+    display: none;
 }
 </style>
